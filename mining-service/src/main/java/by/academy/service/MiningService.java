@@ -56,18 +56,6 @@ public class MiningService {
         logger.info("Saving to database transaction with stamp: {}", transaction);
         transactionRepository.save(transaction);
 
-        Wallet sender = walletRepository.findById(transaction.getSenderWallet()).orElseThrow();
-        Wallet receiver = walletRepository.findById(transaction.getReceiverWallet()).orElseThrow();
-
-        sender.setBalance(sender.getBalance() - transaction.getValue());
-        receiver.setBalance(receiver.getBalance() + transaction.getValue());
-
-        logger.info("Updating sender wallet balance : {}", sender);
-        logger.info("Updating receiver wallet balance : {}", receiver);
-
-        walletRepository.save(sender);
-        walletRepository.save(receiver);
-
         if (transactionRepository.findById(transaction.getId()).orElseThrow().getStamp() == 0) {
             return false;
         } else {
