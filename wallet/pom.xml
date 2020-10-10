@@ -224,24 +224,6 @@
                     <packagingExcludes>WEB-INF/lib/javax.servlet-api-4.0.0.jar</packagingExcludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <username>tomcat</username>
-                    <password>tomcat</password>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>redeploy_web_app</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>redeploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
 
 
             <plugin>
