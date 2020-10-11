@@ -14,9 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.net.URI;
-//import java.net.http.HttpClient;
-//import java.net.http.HttpRequest;
-//import java.net.http.HttpResponse;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 @Controller
 @RequestMapping("/mining")
@@ -43,16 +43,16 @@ public class MiningController {
     }
 
 
-//    private static HttpResponse<String>
-//    postRequestToTheMiningService(String body) throws IOException, InterruptedException {
-//        HttpClient httpClient = HttpClient.newHttpClient();
-//
-//        HttpRequest httpRequest = HttpRequest.newBuilder()
-//                .uri(URI.create("http://localhost:8081/runMining"))
-//                .POST(HttpRequest.BodyPublishers.ofString(body))
-//                .header("Content-Type", "application/json")
-//                .build();
-//
-//        return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
-//    }
+    private static HttpResponse<String>
+    postRequestToTheMiningService(String body) throws IOException, InterruptedException {
+        HttpClient httpClient = HttpClient.newHttpClient();
+
+        HttpRequest httpRequest = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8081/runMining"))
+                .POST(HttpRequest.BodyPublishers.ofString(body))
+                .header("Content-Type", "application/json")
+                .build();
+
+        return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+    }
 }
