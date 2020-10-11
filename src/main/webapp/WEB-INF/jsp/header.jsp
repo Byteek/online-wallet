@@ -19,7 +19,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/wallet/home"><h2>Wallet</h2></a>
+    <a class="navbar-brand" href="/home"><h2>Wallet</h2></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/wallet/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -39,32 +39,32 @@
                     User`s menu
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/wallet/new-transaction">New Transaction</a>
-                    <a class="dropdown-item" href="/wallet/transaction-list">Transaction list</a>
-                    <a class="dropdown-item" href="/wallet/balance">Balance</a>
+                    <a class="dropdown-item" href="/new-transaction">New Transaction</a>
+                    <a class="dropdown-item" href="/transaction-list">Transaction list</a>
+                    <a class="dropdown-item" href="/balance">Balance</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/wallet/mining">Run mining</a>
+                    <a class="dropdown-item" href="/mining">Run mining</a>
                 </div>
                 <sec:authorize access="!isAuthenticated()">
             <li class="nav-item">
-                <a class="nav-link" href="/wallet/login" tabindex="1">Login</a>
+                <a class="nav-link" href="/login" tabindex="1">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/wallet/registration" tabindex="1">Registration</a>
+                <a class="nav-link" href="/registration" tabindex="1">Registration</a>
             </li>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">
                 <li class="nav-item">
-                    <a class="nav-link " href="/wallet/balance" tabindex="1">Balance</a>
+                    <a class="nav-link " href="/balance" tabindex="1">Balance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/wallet/logout" tabindex="1">Logout</a>
+                    <a class="nav-link" href="/logout" tabindex="1">Logout</a>
                 </li>
             </sec:authorize>
 
             </li>
         </ul>
-        <%--      <form class="form-inline my-2 my-lg-0" action="/wallet/search.html">--%>
+        <%--      <form class="form-inline my-2 my-lg-0" action="/search.html">--%>
         <%--        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">--%>
         <%--        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
         <%--      </form>--%>
