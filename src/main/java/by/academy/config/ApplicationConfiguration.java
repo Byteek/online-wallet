@@ -33,15 +33,11 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 
     @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
-        URI dbUri = new URI(System.getenv("postgres://uiqkovfbpcfoid:4b19ae0042ce2a63957335ca8e36ab95973b37564ffaa50b02c6dc66fea4993b@ec2-54-195-247-108.eu-west-1.compute.amazonaws.com:5432/df75ag0ful563i"));
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require";
-
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl(dbUrl);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
+        BasicDataSource dataSource = new org.apache.commons.dbcp.BasicDataSource();
+        dataSource.setUrl("jdbc:postgresql://ec2-54-195-247-108.eu-west-1.compute.amazonaws.com:5432/df75ag0ful563i?sslmode=require");
+        dataSource.setUsername("uiqkovfbpcfoid");
+        dataSource.setPassword("4b19ae0042ce2a63957335ca8e36ab95973b37564ffaa50b02c6dc66fea4993b");
+        dataSource.setDriverClassName("com.post.cj.jdbc.Driver");
         return dataSource;
     }
 
