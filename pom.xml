@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>by.academy</groupId>
-    <name>wallet</name>
+    <name>pogodsky-online-wallet.herokuapp.com</name>
     <artifactId>wallet</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
