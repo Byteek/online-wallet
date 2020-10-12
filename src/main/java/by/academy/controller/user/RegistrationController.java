@@ -50,7 +50,7 @@ public class RegistrationController {
         walletService.saveWallet(wallet);
         appUser.setUsersWallet(wallet.getId());
         userService.saveUser(appUser);
-        return "redirect:home.html";
+        return "redirect:home";
 
     }
 }
