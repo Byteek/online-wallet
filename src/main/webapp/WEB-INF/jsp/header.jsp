@@ -51,7 +51,7 @@
                 <a class="nav-link" href="/wallet/login" tabindex="1">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/wallet/registration" tabindex="1">Registration</a>
+                <a class="nav-link" href="/registration" tabindex="1">Registration</a>
             </li>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">
