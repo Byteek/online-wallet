@@ -1,7 +1,7 @@
 <jsp:include page="header.jsp"/>
 <h1>Registration</h1>
 
-<form action="/registration" method="post">
+<form action="/wallet/registration" method="post">
     <div class="form-group">
         <label for="inputUsername">User name</label>
         <input type="text" class="form-control" name="username" id="inputUsername"
