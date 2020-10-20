@@ -1,4 +1,8 @@
 <jsp:include page="header.jsp"/>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <h1>Registration</h1>
 
 <form action="/wallet/registration" method="post">

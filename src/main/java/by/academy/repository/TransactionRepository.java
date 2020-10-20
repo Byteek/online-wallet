@@ -16,5 +16,4 @@ public interface TransactionRepository extends JpaRepository<Transaction, String
 
     List<Transaction> findAllBySenderWallet(String id);
 
-
 }

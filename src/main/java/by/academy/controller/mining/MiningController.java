@@ -38,7 +38,7 @@ public class MiningController {
          AppUser appUser = userService.getUserByUsername(UserService.getUsernameAuthUser());
         String appUserJson = new GsonBuilder().setPrettyPrinting().create().toJson(appUser);
 
-//        postRequestToTheMiningService(appUserJson);
+        postRequestToTheMiningService(appUserJson);
         return "redirect:home";
     }
 

@@ -1,10 +1,11 @@
+
+<html lang="en">
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<!doctype html>
-<html lang="en">
 <head>
     <%--    content="width=device-width, initial-scale=1, shrink-to-fit=no,application/json"--%>
     <!-- Required meta tags -->
@@ -28,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/wallet/home">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -37,7 +38,6 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     User`s menu
-
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/wallet/new-transaction">New Transaction</a>
@@ -51,7 +51,7 @@
                 <a class="nav-link" href="/wallet/login" tabindex="1">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/registration" tabindex="1">Registration</a>
+                <a class="nav-link" href="/wallet/registration" tabindex="1">Registration</a>
             </li>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">

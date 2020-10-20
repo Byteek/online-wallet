@@ -12,7 +12,6 @@ by\academy\config\SecurityInitializer.class
 by\academy\entity\Wallet.class
 by\academy\controller\user\UserController.class
 by\academy\entity\Block$BlockBuilder.class
-by\academy\Main.class
 by\academy\config\MyAuthenticationProvider.class
 by\academy\controller\transaction\NewTransactionController.class
 by\academy\controller\user\BalanceController.class

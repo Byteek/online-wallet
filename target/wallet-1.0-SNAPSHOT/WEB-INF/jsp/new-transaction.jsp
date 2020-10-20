@@ -1,6 +1,8 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <jsp:include page="header.jsp"/>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <h1>New transaction</h1>
 <h3>Due to the current situation in the country, the commission for transfers is 1% of the transfer amount</h3>

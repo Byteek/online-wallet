@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -32,14 +33,26 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 
 
     @Bean
-    public BasicDataSource dataSource() throws URISyntaxException {
-        BasicDataSource dataSource = new org.apache.commons.dbcp.BasicDataSource();
-        dataSource.setUrl("jdbc:postgresql://ec2-54-195-247-108.eu-west-1.compute.amazonaws.com:5432/df75ag0ful563i?sslmode=require");
-        dataSource.setUsername("uiqkovfbpcfoid");
-        dataSource.setPassword("4b19ae0042ce2a63957335ca8e36ab95973b37564ffaa50b02c6dc66fea4993b");
-//        dataSource.setDriverClassName("com.post.cj.jdbc.Driver");
-        return dataSource;
+    public BasicDataSource dataSource(){
+
+        BasicDataSource basicDataSource = new BasicDataSource();
+        basicDataSource.setUrl("jdbc:postgresql://ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/d63fnd44si042b?&serverTimezone=UTC&createDatabaseIfNotExist=true&sslmode=require");
+        basicDataSource.setUsername("pxhvsorrqyobsw");
+        basicDataSource.setPassword("96e163a921a281141240914dded40b7a34f84756d9b57bfb31f483a5c6d2755e");
+        basicDataSource.setDriverClassName("org.postgresql.Driver");
+
+        return basicDataSource;
     }
+
+//    @Bean
+//    public DataSource dataSource() {
+//        BasicDataSource dataSource = new org.apache.commons.dbcp.BasicDataSource();
+//        dataSource.setUrl("jdbc:mysql://localhost:3306/wallet_db?serverTimezone=UTC&createDatabaseIfNotExist=true");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("root");
+//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//        return dataSource;
+//    }
 
     private Properties getHibernateProperties() {
         Properties properties = new Properties();
@@ -55,11 +68,13 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    public InternalResourceViewResolver internalResourceViewResolver() {
+    public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver resolver
                 = new InternalResourceViewResolver();
+        resolver.setViewClass(JstlView.class);
         resolver.setPrefix("/WEB-INF/jsp/");
         resolver.setSuffix(".jsp");
+
         return resolver;
     }
 
