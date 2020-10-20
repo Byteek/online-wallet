@@ -1,0 +1,25 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <title>Spring Boot Thymeleaf + Spring Security</title>
+
+  <div th:replace="fragments/header"/>
+
+</head>
+<body>
+<div th:replace="fragments/header"/>
+
+
+  <sec:authorize access="!isAuthenticated()">
+    <h4>You are in the educational project of Nikita Pogodsky. Please log in</h4>
+  </sec:authorize>
+  <sec:authorize access="isAuthenticated()">
+    <h4>You are in the educational project of Nikita Pogodsky. Thank you for attention</h4>
+  </sec:authorize>
+
+<div th:replace="fragments/footer"/>
+
+</body>
+</html>
