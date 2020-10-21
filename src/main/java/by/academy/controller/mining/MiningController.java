@@ -48,7 +48,7 @@ public class MiningController {
         HttpClient httpClient = HttpClient.newHttpClient();
 
         HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create("http://localhost:8081/runMining"))
+                .uri(URI.create("https://mining-service.herokuapp.com/runMining"))
                 .POST(HttpRequest.BodyPublishers.ofString(body))
                 .header("Content-Type", "application/json")
                 .build();
