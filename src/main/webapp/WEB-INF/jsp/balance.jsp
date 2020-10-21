@@ -8,7 +8,7 @@
 
 
 
-<form action="/wallet/balance"  method="post" accept-charset="UTF-8" >
+<form action="/balance"  method="post" accept-charset="UTF-8" >
     <div class="form-group">
 
         <label for="enterCardNumber">Enter your card</label>

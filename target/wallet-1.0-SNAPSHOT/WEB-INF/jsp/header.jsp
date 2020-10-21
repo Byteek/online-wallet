@@ -41,31 +41,31 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/new-transaction">New Transaction</a>
-                    <a class="dropdown-item" href="/wallet/transaction-list">Transaction list</a>
-                    <a class="dropdown-item" href="/wallet/balance">Balance</a>
+                    <a class="dropdown-item" href="/transaction-list">Transaction list</a>
+                    <a class="dropdown-item" href="/balance">Balance</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/wallet/mining">Run mining</a>
+                    <a class="dropdown-item" href="/mining">Run mining</a>
                 </div>
                 <sec:authorize access="!isAuthenticated()">
             <li class="nav-item">
-                <a class="nav-link" href="/wallet/login" tabindex="1">Login</a>
+                <a class="nav-link" href="/login" tabindex="1">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/wallet/registration" tabindex="1">Registration</a>
+                <a class="nav-link" href="/registration" tabindex="1">Registration</a>
             </li>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">
                 <li class="nav-item">
-                    <a class="nav-link " href="/wallet/balance" tabindex="1">Balance</a>
+                    <a class="nav-link " href="/balance" tabindex="1">Balance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/wallet/logout" tabindex="1">Logout</a>
+                    <a class="nav-link" href="/logout" tabindex="1">Logout</a>
                 </li>
             </sec:authorize>
 
             </li>
         </ul>
-        <%--      <form class="form-inline my-2 my-lg-0" action="/wallet/search.html">--%>
+        <%--      <form class="form-inline my-2 my-lg-0" action="/search.html">--%>
         <%--        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">--%>
         <%--        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--%>
         <%--      </form>--%>

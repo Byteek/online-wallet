@@ -7,7 +7,7 @@
 <h1>New transaction</h1>
 <h3>Due to the current situation in the country, the commission for transfers is 1% of the transfer amount</h3>
 
-<form:form action="/wallet/new-transaction"  method="post" accept-charset="UTF-8" >
+<form:form action="/new-transaction"  method="post" accept-charset="UTF-8" >
     <div class="form-group">
         <label for="inputReceiver">Receiver</label>
         <input type="text" class="form-control" name="receiverWallet" id="inputReceiver"

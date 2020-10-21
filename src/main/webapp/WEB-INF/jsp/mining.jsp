@@ -3,7 +3,7 @@
 
 <h1>Mining</h1>
 
-<form action="/wallet/mining" method="post" >
+<form action="/mining" method="post" >
     <h1>Mining service is run</h1>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
