@@ -57,7 +57,7 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
     private Properties getHibernateProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL10Dialect");
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");
+        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
         properties.setProperty("show_sql", "true");
         properties.setProperty("generate-ddl", "false");
         properties.setProperty("hibernate.jdbc.lob.non_contextual_creation", "true");
