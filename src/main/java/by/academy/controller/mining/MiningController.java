@@ -35,7 +35,7 @@ public class MiningController {
     @PostMapping
     public String runMining() throws IOException, InterruptedException {
 
-         AppUser appUser = userService.getUserByUsername(UserService.getUsernameAuthUser());
+        AppUser appUser = userService.getUserByUsername(UserService.getUsernameAuthUser());
         String appUserJson = new GsonBuilder().setPrettyPrinting().create().toJson(appUser);
 
         postRequestToTheMiningService(appUserJson);
