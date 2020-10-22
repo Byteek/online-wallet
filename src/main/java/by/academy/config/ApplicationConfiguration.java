@@ -36,7 +36,7 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
     public BasicDataSource dataSource(){
 
         BasicDataSource basicDataSource = new BasicDataSource();
-        basicDataSource.setUrl("jdbc:postgresql://ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/d63fnd44si042b?&serverTimezone=UTC&createDatabaseIfNotExist=true&sslmode=require");
+        basicDataSource.setUrl("jdbc:postgresql://ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/d63fnd44si042b?serverTimezone=UTC&createDatabaseIfNotExist=true&sslmode=require");
         basicDataSource.setUsername("pxhvsorrqyobsw");
         basicDataSource.setPassword("96e163a921a281141240914dded40b7a34f84756d9b57bfb31f483a5c6d2755e");
         basicDataSource.setDriverClassName("org.postgresql.Driver");
@@ -57,7 +57,7 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
     private Properties getHibernateProperties() {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL10Dialect");
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         properties.setProperty("show_sql", "true");
         properties.setProperty("generate-ddl", "false");
         properties.setProperty("hibernate.jdbc.lob.non_contextual_creation", "true");
