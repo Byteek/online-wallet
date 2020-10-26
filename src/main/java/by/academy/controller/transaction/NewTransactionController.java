@@ -5,15 +5,14 @@ import by.academy.entity.Transaction;
 import by.academy.service.TransactionService;
 import by.academy.service.UserService;
 import by.academy.service.WalletService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -46,8 +45,12 @@ public class NewTransactionController {
     public String createNewTransaction(@Valid Transaction transaction, ModelMap modelMap) {
 
         transaction.setSenderWallet(UserService.getUsernameAuthUser());
+
         AppUser senderAppUser = userService.getUserByUsername(transaction.getSenderWallet());
         AppUser receiverAppUser = userService.getUserByUsername(transaction.getReceiverWallet());
+
+        transaction.setSenderWallet(senderAppUser.getUsersWallet());
+        transaction.setReceiverWallet(receiverAppUser.getUsersWallet());
         if (receiverAppUser == null) {
             final String message = "There is no such user";
             modelMap.addAttribute("message", message);
@@ -58,7 +61,7 @@ public class NewTransactionController {
             modelMap.addAttribute("message", message);
             return errorPage;
         }
-        if (transaction.getValue() > walletService.getWallet(senderAppUser.getUsersWallet()).getBalance()) {
+        if (transaction.getValue() > walletService.getWalletBalance(transaction.getSenderWallet())) {
             final String message = "You don't have enough funds";
             modelMap.addAttribute("message", message);
             return errorPage;
@@ -70,8 +73,7 @@ public class NewTransactionController {
         }
 
 
-        transaction.setSenderWallet(senderAppUser.getUsersWallet());
-        transaction.setReceiverWallet(receiverAppUser.getUsersWallet());
+
 
 
         transactionService.createNewTransaction(transaction);
