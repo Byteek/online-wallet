@@ -57,8 +57,8 @@ public class WalletService {
         transactionTopUpList
                 .forEach(transactionTopUp -> transactionTopUpListAmount.addAndGet(transactionTopUp.getAmount()));
 
-        return transactionListUserSenderAmount.longValue()
-                + transactionListUserReceiverAmount.longValue()
-                + transactionTopUpListAmount.longValue();
+        return transactionTopUpListAmount.longValue()
+                - transactionListUserSenderAmount.longValue()
+                + transactionListUserReceiverAmount.longValue();
     }
 }
