@@ -38,7 +38,7 @@ public class BalanceController {
         Wallet wallet = walletService.getWallet(user.getUsersWallet());
 
         modelAndView.setViewName("balance");
-        modelAndView.addObject("balance", wallet.getBalance());
+        modelAndView.addObject("balance", walletService.getWalletBalance(wallet.getId()));
         return modelAndView;
     }
 
