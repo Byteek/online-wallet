@@ -43,7 +43,7 @@ public class BalanceController {
     }
 
     @PostMapping
-    public String transferMoneyToWallet(@ModelAttribute @Valid TransactionTopUp transactionTopUp, ModelMap modelMap) {
+    public String transferMoneyToWallet(@ModelAttribute TransactionTopUp transactionTopUp, ModelMap modelMap) {
 
         AppUser user = userService.getUserByUsername(UserService.getUsernameAuthUser());
         Wallet userWallet = walletService.getWallet(user.getUsersWallet());
